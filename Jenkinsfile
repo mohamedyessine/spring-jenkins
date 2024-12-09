@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+    DOCKER_CREDS = credentials('465b0843-c743-4214-aba8-82ca0ab08a46')
+}
     stages {
         stage('Build jar') {
             steps {
@@ -14,8 +17,10 @@ pipeline {
         stage('Build docker image') {
             steps {
                 powershell "docker build -t storemanagement:${BUILD_ID} ."
+             
                }
             }
+       
     }
     post{
         always{
