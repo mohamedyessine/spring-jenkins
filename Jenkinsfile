@@ -6,6 +6,11 @@ pipeline {
                 powershell 'mvn clean package'
             }
         }
+        stage('Display build data') {
+            steps {
+                bat 'set'
+            }
+        }
         stage('Build docker image') {
             steps {
                 powershell "docker build -t storemanagement:${BUILD_ID} ."
