@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build jar') {
             steps {
-                powershell 'nvm clean package'
+                powershell 'mvn clean package'
             }
         }
         stage('Build docker image') {
