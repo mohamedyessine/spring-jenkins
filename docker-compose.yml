@@ -1,0 +1,25 @@
+version: "3.7.1"
+
+services:
+  store-management:
+    image: wadii10/storemanagement:1.0.0
+    restart: on-failure
+    depends_on:
+      - mysql
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/Store?createDatabaseIfExist=true
+      SPRING_DATASOURCE_PASSWORD: my-secret-pw
+
+  mysql:
+    image: mysql:8.0.39-debian
+    ports:
+      - 3307:3306
+    volumes:
+      - mysqldc:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+
+volumes:
+  mysqldc:
