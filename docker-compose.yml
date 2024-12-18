@@ -1,4 +1,4 @@
-version: "3.7.1"
+version: "3.7"
 
 services:
   store-management:
@@ -7,19 +7,23 @@ services:
     depends_on:
       - mysql
     ports:
-      - 8080:8080
+      - "${NODE_PORT}:${CONTAINER_PORT}"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/Store?createDatabaseIfExist=true
-      SPRING_DATASOURCE_PASSWORD: my-secret-pw
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/store?createDatabaseIfNotExist=true
+      SERVER_PORT: ${CONTAINER_PORT}
+
 
   mysql:
     image: mysql:8.0.39-debian
+    restart: on-failure
     ports:
-      - 3307:3306
+      - "3306:3306"
     volumes:
-      - mysqldc:/var/lib/mysql
+      - mysql-data-compose:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: my-secret-pw
 
+
 volumes:
-  mysqldc:
+  mysql-data-compose:
+
