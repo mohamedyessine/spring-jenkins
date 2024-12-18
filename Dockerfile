@@ -51,3 +51,5 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 # pull : pull + fetch
 # git cherry pick : get changement from other commit
 # git hub flow method/ git tbd  method/ git
+# scan b 1 min after any commit
+# use when fi jenkins fl delevery w deployment (important)

@@ -32,6 +32,13 @@ pipeline {
                 stage('deploy'){
                     steps{
                         powershell "docker compose up -d"
+                        retry(5){
+                            powershell "sleep 10"
+                            timeout(time: 10, unit: 'SECONDS') {
+                                powershell "curl http://localhost:${NODE_PORT}/store-management/actuator/health"
+                                }
+
+                        }
                     }
                 }
 
