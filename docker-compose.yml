@@ -13,6 +13,17 @@ services:
       SERVER_PORT: ${CONTAINER_PORT}
 
 
+  mysql:
+    image: mysql:8.0.39-debian
+    restart: on-failure
+    ports:
+      - "3307:3307"
+    volumes:
+      - mysql-data-compose:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+
+
 volumes:
   mysql-data-compose:
 
