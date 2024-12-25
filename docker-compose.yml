@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   store-management:
-    image: yessinelleuch/storemanagement:latest
+    image: ${DOCKER_CREDS_USR}/storemanagement:${BUILD_ID}-${BRANCH_NAME}
     restart: on-failure
     depends_on:
       - mysql
