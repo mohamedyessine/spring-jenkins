@@ -9,7 +9,7 @@ services:
     ports:
       - "${NODE_PORT}:${CONTAINER_PORT}"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/store?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3307/store?createDatabaseIfNotExist=true
       SERVER_PORT: ${CONTAINER_PORT}
 
 
