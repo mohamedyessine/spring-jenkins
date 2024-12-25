@@ -12,7 +12,7 @@ spring:
         livereload:
             enabled: true
     datasource:
-        url: jdbc:mysql://localhost:3336/Store?createDatabaseIfNotExist=true
+        url: jdbc:mysql://localhost:3337/Store?createDatabaseIfNotExist=true
         username: root
         password: my-secret-pw
     jpa:
