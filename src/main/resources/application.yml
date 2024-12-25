@@ -30,7 +30,7 @@ lang:
 
 server:
     servlet.contextPath: /store-management
-    port: 8080
+    port: 30080
     compression:
         enabled: true
         mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
