@@ -12,9 +12,9 @@ spring:
         livereload:
             enabled: true
     datasource:
-        url: jdbc:mysql://localhost:3337/Store?createDatabaseIfNotExist=true
+        url: jdbc:mysql://localhost:3306/Store?createDatabaseIfNotExist=true
         username: root
-        password: my-secret-pw
+        password: Yessine07+
     jpa:
         database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
         #        database: SQL_SERVER
@@ -30,7 +30,7 @@ lang:
 
 server:
     servlet.contextPath: /store-management
-    port: 30080
+    port: 8080
     compression:
         enabled: true
         mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
