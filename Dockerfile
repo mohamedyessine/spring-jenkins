@@ -53,3 +53,4 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 # git hub flow method/ git tbd  method/ git
 # scan b 1 min after any commit
 # use when fi jenkins fl delevery w deployment (important)
+# use try catch f deploy kn fama mochkle yraja3 haja
