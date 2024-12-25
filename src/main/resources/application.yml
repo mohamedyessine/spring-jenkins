@@ -12,9 +12,9 @@ spring:
         livereload:
             enabled: true
     datasource:
-        url: jdbc:mysql://localhost:3306/store?createDatabaseIfNotExist=true
+        url: jdbc:mysql://mysql:3307/Store?createDatabaseIfNotExist=true
         username: root
-        password: Yessine07+
+        password: my-secret-pw
     jpa:
         database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
         #        database: SQL_SERVER
