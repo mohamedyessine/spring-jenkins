@@ -4,25 +4,11 @@ services:
   store-management:
     image: ${DOCKER_CREDS_USR}/storemanagement:${BUILD_ID}-${BRANCH_NAME}
     restart: on-failure
-    depends_on:
-      - mysql
     ports:
       - "${NODE_PORT}:${CONTAINER_PORT}"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3307/store?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/store?createDatabaseIfNotExist=true
       SERVER_PORT: ${CONTAINER_PORT}
-
-
-  mysql:
-    image: mysql:8.0.39-debian
-    restart: on-failure
-    ports:
-      - "3307:3307"
-    volumes:
-      - mysql-data-compose:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: my-secret-pw
-
 
 volumes:
   mysql-data-compose:
