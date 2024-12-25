@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   store-management:
-    image: yessinelleuch/storemanagement
+    image: yessinelleuch/storemanagement:latest
     restart: on-failure
     depends_on:
       - mysql
